@@ -1,0 +1,2 @@
+#ignore platform specific stuff. for phonegap build and allow devs to set up platform for themselver
+platforms/

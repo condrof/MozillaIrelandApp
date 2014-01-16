@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+    <head>
+        <script>
+        (function() {
+    if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+        var msViewportStyle = document.createElement("style");
+        msViewportStyle.appendChild(
+            document.createTextNode("@-ms-viewport{width:auto!important}")
+        );
+        document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+    }
+})();
+</script>
+        <title>Mozilla Ireland</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" type="text/css" href="css/icons.css" />    
+ 
+       <!--   
+     <link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />
+  -->
+      <link rel="stylesheet" type="text/css" href="css/src/main.css"  />
+      <link rel="stylesheet" type="text/css" href="css/src/appframework.css"  />
+
+      <link rel="stylesheet" type="text/css" href="css/src/badges.css"  />
+      <link rel="stylesheet" type="text/css" href="css/src/buttons.css"  />
+      <link rel="stylesheet" type="text/css" href="css/src/lists.css"  />
+      <link rel="stylesheet" type="text/css" href="css/src/forms.css"  />
+      <link rel="stylesheet" type="text/css" href="css/src/grid.css"  />
+
+      <link rel="stylesheet" type="text/css" href="css/af.actionsheet.css"  />
+      <link rel="stylesheet" type="text/css" href="css/af.popup.css"  />
+      <link rel="stylesheet" type="text/css" href="css/af.selectBox.css"  />
+      <link rel="stylesheet" type="text/css" href="css/af.selectBox.css"  />
+      <link rel="stylesheet" type="text/css" href="css/custom.css"  />
+
+        <script type="text/javascript" charset="utf-8" src="js/appframework.min.js"></script>
+        <!-- include af.desktopBrowsers.js on desktop browsers only -->
+        <script>
+            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+                var script = document.createElement("script");
+                script.src = "js/plugins/af.desktopBrowsers.js";
+                var tag = $("head").append(script);
+            }
+        </script>
+        <script type="text/javascript" charset="utf-8" src="js/plugins/af.actionsheet.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/plugins/af.css3animate.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/plugins/af.passwordBox.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/plugins/af.scroller.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/plugins/af.selectBox.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/plugins/af.touchEvents.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/plugins/af.touchLayer.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/plugins/af.popup.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/ui/src/appframework.ui.js"></script>
+        <!-- <script type="text/javascript" charset="utf-8" src="./ui/transitions/all.js"></script> -->
+        <script type="text/javascript" charset="utf-8" src="js/ui/transitions/fade.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/ui/transitions/flip.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/ui/transitions/pop.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/ui/transitions/slide.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/ui/transitions/slideDown.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/ui/transitions/slideUp.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/plugins/af.slidemenu.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/articles/articles.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/articles/googleanalytics.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/articles/ga.js"></script>
+
+        <script type="text/javascript">
+            var BaseUrl = "http://www.mozillaireland.org";
+
+            $.os.useOSThemes=false;
+            
+            var webRoot = "./";
+            $.ui.autoLaunch = false;
+            
+            $(document).ready(function(){
+                $.ui.launch();
+                navigator.splashscreen.hide();
+            });
+
+            function showHide(obj, objToHide) {
+                var el = $("." + objToHide)[0];
+
+                if (obj.className == "expanded") {
+                    obj.className = "collapsed";
+                } else {
+                    obj.className = "expanded";
+                }
+                $(el).toggle();
+
+            }
+        </script>
+</head>
+
+    <body>
+        <div id="afui" class="">
+            <!-- this is the splashscreen you see. -->
+            <div id="splashscreen" class='ui-loader heavy'>
+                <img src="splash.png" />
+                
+                <span class='ui-icon ui-icon-loading spin'></span>
+            </div>
+            <div id="header">
+                <a id='menubadge' onclick='af.ui.toggleSideMenu()' class='menuButton'></a>
+            </div>
+
+            <div id="content">
+                <div title='Mozilla Ireland' id="main" class="panel" selected="true" data-load="articlesPanel" data-unload="gaeilgePanel" data-tab="navbar_articles" data-defer="views/articles/index.html">
+                </div>
+
+                <div title='Mozilla Ireland' id="showArticle" class="panel" data-load="singleArticle" data-unload="" data-tab="navbar_articles" data-defer="views/articles/show.html">
+                </div>
+
+                <div title='LiveGaelic' id="gaeilge" class="panel" data-load="gaeilgePanel" data-unload="cleanUpArticles" data-tab="navbar_articles" data-defer="views/articles/page.html">
+                </div>
+
+                <div title='LiveGaelic' id="about" class="panel" data-load="aboutPanel" data-unload="cleanUpArticles" data-tab="navbar_articles" data-defer="views/articles/page.html">
+                </div>
+
+                <div title='LiveGaelic' id="getInvolved" class="panel" data-load="getInvolvedPanel" data-unload="cleanUpArticles" data-tab="navbar_articles" data-defer="views/articles/page.html">
+                </div>
+
+            </div>
+            <!-- ------------------------------------------ -->
+        
+           
+            <!-- -----------------  SIDE PANEL  --------------------- -->
+            <nav>
+                <ul class="list">
+                    <li class="divider" class="icon home">Home</li>
+                    <li>
+                        <a href="#main"><img src="img/siteLogo.png" width="100%" /></a>
+                    </li>
+                 <li class="divider">Articles</li>
+                    <li>
+                        <a href="#main">Home</a>
+                    </li>
+                    <li>
+                        <a href="#gaeilge">As Gaeilge</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#getInvolved">Get Involved</a>
+                    </li>
+                                        
+                </ul>
+            </nav>
+            
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+
+    </body>
+</html>

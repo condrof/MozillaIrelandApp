@@ -1,0 +1,13 @@
+img{
+	max-width: 300px;
+}
+
+.centre{
+	text-align: center;
+}
+
+.floatLeft{
+	float:left;
+	margin-right:10px;
+	width: 80px;
+}

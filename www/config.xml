@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.fergalcondron.mozillaIreland" version="1.0" versionCode="1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Mozilla Ireland</name>
+    <description>
+        Mozilla Ireland App
+    </description>
+    <author email="fergal@clubscores.ie" href="http://clubscores.ie">
+        Fergal Condron, Mozilla Ireland
+    </author>
+    <content src="index.html" />
+    <access origin="http://clubscores.ie" subdomains="true" />
+    <access origin="http://livegaelic.com" subdomains="true" />
+    <access origin="http://csstaging.eu01.aws.af.cm" />
+    <access origin="http://localhost" />
+
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="stay-in-webview" value="false" />  
+    <icon src="img/ic_launcher.png" />
+
+    <plugins>
+    <plugin name="InAppBrowser" value="CDVInAppBrowser" />
+  </plugins>
+
+  <feature name="InAppBrowser">
+    <param name="ios-package" value="CDVInAppBrowser" />
+  </feature>
+</widget>
